@@ -116,4 +116,4 @@ To avoid charges, delete the ECS service, load balancer, target group and ECR im
 ## Author
 
 **Ganesh Balekundri** -  (AWS, Devops)
-GitHub: [@ganeshbalekundri25](https://github.com/ganeshbalekundri25)
+GitHub: [@ganeshbalekundri25]((https://github.com/ganeshbalekundri25/ECR-ECS_Project/tree/main))
