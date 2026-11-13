@@ -75,14 +75,18 @@ app.get('/todo', function (req, res) {
         }
         res.redirect('/todo');
     })
-    /* Redirects to the to do list if the page requested is not found */
-    .use(function (req, res, next) {
-        res.redirect('/todo');
-    })
-
-    .listen(port, function () {
-        // Logging to console
-        console.log(`Todolist running on http://0.0.0.0:${port}`)
+   // Health check endpoint for AWS Load Balancer
+  app.get('/health', (req, res) => {
+    res.status(200).send('OK');
     });
+
+    // Redirects to the to do list if the page requested is not found
+  app.use(function (req, res, next) {
+        res.redirect('/todo');
+    });
+
+  app.listen(port, function () {
+    console.log(`Todolist running on http://0.0.0.0:${port}`);
+  }); 
 // Export app
 module.exports = app;
